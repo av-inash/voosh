@@ -32,6 +32,13 @@ app.use(session({
 initializePassport(passport);
 app.use(passport.initialize());
 app.use(passport.session());
+app.get('/', (req, res) => {
+    res.send('Hey this is my API running 🥳')
+})
+
+app.get('/about', (req, res) => {
+    res.send('This is my about route..... ')
+})
 
 // User routes
 app.use("/api/v1/users", route);
